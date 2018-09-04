@@ -18,6 +18,7 @@ function theScroll() {
         document.getElementById("body").style.backgroundColor = "green";
     } else {
         document.getElementById("event").innerText = "";
+        document.getElementById("body").style.backgroundColor = "red";
     }
 }
 
