@@ -1,7 +1,3 @@
-window.onscroll = function() {
-    theScroll();
-};
-
 function theScroll() {
 
     // The scrollTop property sets or returns the number of pixels an element's content is scrolled vertically.
@@ -17,9 +13,14 @@ function theScroll() {
     console.log("scrolled: " + thetime);
     document.getElementById("position").innerText = thetime;
 
-    if(6 <= thetime && 18 >= thetime) {
+    if (6 <= thetime && 18 >= thetime) {
         document.getElementById("event").innerText = "SUN RISE";
+        document.getElementById("body").style.backgroundColor = "green";
     } else {
         document.getElementById("event").innerText = "";
     }
 }
+
+window.onscroll = function () {
+    theScroll();
+};
