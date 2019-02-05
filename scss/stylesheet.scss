@@ -38,6 +38,7 @@ body {
 #firstname {
   font-size: 2.4rem;
   font-weight: 700; // Bold
+  text-transform: uppercase;
 }
 
 #lastname {
@@ -91,6 +92,7 @@ body {
     font-weight: 500;
     line-height: 1.2rem;
     margin-left: 1rem;
+    text-transform: capitalize;
   }
 
   #title {
