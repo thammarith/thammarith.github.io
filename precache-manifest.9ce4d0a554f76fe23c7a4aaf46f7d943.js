@@ -12,8 +12,16 @@ self.__precacheManifest = [
     "url": "/js/app.cade9708.js"
   },
   {
-    "revision": "9be6ac50329f35f9af80bccb9da943d9",
+    "revision": "a5bc79af9838322b6bdec947a5ac46fb",
     "url": "/index.html"
+  },
+  {
+    "revision": "5f36f2bcd384d5309f775e985c420918",
+    "url": "/favicon-32x32.png"
+  },
+  {
+    "revision": "eee807b38fb6034d818e43923e599687",
+    "url": "/favicon-16x16.png"
   },
   {
     "revision": "982d8c37421c321ad715",
