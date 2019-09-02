@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/js/app.cade9708.js"
   },
   {
-    "revision": "a5bc79af9838322b6bdec947a5ac46fb",
+    "revision": "5489aec488f53f1af4c16dfc25e1e892",
     "url": "/index.html"
   },
   {
