@@ -3,25 +3,36 @@ module.exports = {
 		siteUrl: 'https://www.yourdomain.tld',
 	},
 	plugins: [
-		'gatsby-plugin-sass',
+		// plug-ins
+		'gatsby-plugin-image',
+		'gatsby-plugin-mdx',
+		'gatsby-plugin-react-helmet',
+		'gatsby-plugin-sharp',
+		'gatsby-plugin-sitemap',
 		{
 			resolve: 'gatsby-plugin-google-analytics',
 			options: {
 				trackingId: 'G-CTSYFBBWFF',
 			},
 		},
-		'gatsby-plugin-image',
-		'gatsby-plugin-react-helmet',
-		'gatsby-plugin-sitemap',
+		{
+			resolve: 'gatsby-plugin-sass',
+			options: {
+				postCssPlugins: [
+					require('tailwindcss'),
+					// require('./tailwind.config.js'), // Optional: Load custom Tailwind CSS configuration
+				],
+			},
+		},
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
 				icon: 'src/images/icon.png',
 			},
 		},
-		'gatsby-plugin-mdx',
-		'gatsby-plugin-sharp',
+		// transformers
 		'gatsby-transformer-sharp',
+		// sources
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
