@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	font-size: 16px;
+}
+
+/*
+*,
+:after,
+:before {
+	box-sizing: border-box;
+}
+*/
+
+body {
+	overflow-y: scroll;
+}

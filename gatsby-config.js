@@ -1,3 +1,30 @@
+const fileSources = [
+	{
+		resolve: 'gatsby-source-filesystem',
+		options: {
+			name: 'blogs',
+			path: './src/contents/blogs',
+		},
+		__key: 'blogs',
+	},
+	{
+		resolve: 'gatsby-source-filesystem',
+		options: {
+			name: 'images',
+			path: './src/images/',
+		},
+		__key: 'images',
+	},
+	{
+		resolve: 'gatsby-source-filesystem',
+		options: {
+			name: 'pages',
+			path: './src/pages/',
+		},
+		__key: 'pages',
+	},
+];
+
 module.exports = {
 	siteMetadata: {
 		siteUrl: 'https://www.yourdomain.tld',
@@ -5,7 +32,6 @@ module.exports = {
 	plugins: [
 		// plug-ins
 		'gatsby-plugin-image',
-		'gatsby-plugin-mdx',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sharp',
 		'gatsby-plugin-sitemap',
@@ -16,11 +42,17 @@ module.exports = {
 			},
 		},
 		{
+			resolve: 'gatsby-plugin-mdx',
+			options: {
+				extensions: ['.md', '.mdx'],
+			},
+		},
+		{
 			resolve: 'gatsby-plugin-sass',
 			options: {
 				postCssPlugins: [
 					require('tailwindcss'),
-					// require('./tailwind.config.js'), // Optional: Load custom Tailwind CSS configuration
+					require('./tailwind.config.js'), // Optional: Load custom Tailwind CSS configuration
 				],
 			},
 		},
@@ -33,21 +65,6 @@ module.exports = {
 		// transformers
 		'gatsby-transformer-sharp',
 		// sources
-		{
-			resolve: 'gatsby-source-filesystem',
-			options: {
-				name: 'images',
-				path: './src/images/',
-			},
-			__key: 'images',
-		},
-		{
-			resolve: 'gatsby-source-filesystem',
-			options: {
-				name: 'pages',
-				path: './src/pages/',
-			},
-			__key: 'pages',
-		},
+		...fileSources,
 	],
 };

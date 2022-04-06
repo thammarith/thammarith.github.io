@@ -1,0 +1,17 @@
+#post {
+	section {
+		@apply w-full max-w-2xl;
+	}
+}
+
+#post__content {
+	h2 {
+		@apply font-text font-bold text-3xl;
+		@apply mt-8;
+	}
+
+	p {
+		@apply font-text text-lg leading-relaxed break-words;
+		@apply mt-6;
+	}
+}
