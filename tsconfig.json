@@ -1,5 +1,15 @@
 {
-  "compilerOptions": {
-    "moduleResolution": "node"
-  }
+	"compilerOptions": {
+		"baseUrl": ".",
+		"isolatedModules": true,
+		"module": "ES2022",
+		"moduleResolution": "node",
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@styles/*": ["src/styles/*"]
+		},
+		"resolveJsonModule": true,
+		"types": ["astro/env"]
+	}
 }
