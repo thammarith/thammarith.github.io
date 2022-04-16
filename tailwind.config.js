@@ -1,20 +1,20 @@
 const fontFamily = {
 	heading: [
-		'FC Friday',
-		'Sukhumvit Set',
-		'SF Pro TH',
-		'SF Pro Display',
-		'SF Pro Icons',
-		'Helvetica Neue',
+		'"FC Friday"',
+		'"Sukhumvit Set"',
+		'"SF Pro TH"',
+		'"SF Pro Display"',
+		'"SF Pro Icons"',
+		'"Helvetica Neue"',
 		'Helvetica',
 		'Arial',
 		'sans-serif',
 	],
 	text: [
-		'CS PraJad',
-		'SF Pro Display',
-		'SF Pro Icons',
-		'Helvetica Neue',
+		'"CS PraJad"',
+		'"SF Pro Display"',
+		'"SF Pro Icons"',
+		'"Helvetica Neue"',
 		'Helvetica',
 		'Arial',
 		'sans-serif',
@@ -29,11 +29,7 @@ module.exports = {
 	],
 	theme: {
 		extend: {},
-		fontFamily: {
-			mono: ['ui-monospace', 'SFMono-Regular'],
-			display: ['Oswald'],
-			body: ['"Open Sans"'],
-		},
+		fontFamily,
 	},
 	plugins: [],
 };
