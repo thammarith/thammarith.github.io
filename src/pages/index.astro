@@ -1,7 +1,9 @@
 ---
 import Layout from '@layouts/GlobalLayout.astro'
 
-import ArrowDown from '../assets/icons/arrow-down.svg';
+import RevueNewsLetter from '@components/RevueNewsLetter/RevueNewsLetter.tsx';
+import Footer from '@components/Footer/Footer.tsx';
+
 ---
 
 <Layout>
@@ -9,7 +11,7 @@ import ArrowDown from '../assets/icons/arrow-down.svg';
 		this is nav bar
 	</nav> -->
 
-	<section class="HomepagePanel h-[90vh] bg-slate-900">
+	<section class="HomepagePanel min-h-[32rem] h-[90vh] bg-slate-900">
 		<h1 class="font-heading text-slate-100 text-6xl leading-[3rem]">
 			Thammarith
 			<br />
@@ -39,7 +41,7 @@ import ArrowDown from '../assets/icons/arrow-down.svg';
 
 		<div class="font-text text-slate-500 text-sm mt-24 flex items-center">
 			<div class="animate-bounce">
-				<i class="far fa-arrow-down w-4 h-4"></i>
+				<i class="fa-solid fa-arrow-down w-4 h-4"></i>
 			</div>
 			<div class="ml-2 pb-1">
 				Scroll down for about me, blog posts, and cat images
@@ -48,8 +50,15 @@ import ArrowDown from '../assets/icons/arrow-down.svg';
 	</section>
 
 	<div class="HomepagePanel">
+
+		<RevueNewsLetter />
+
+
+
 		<h2 class="text-orange-600">Proundly present</h2>
 	</div>
+
+	<Footer client:visible />
 </Layout>
 
 <style lang="scss">
