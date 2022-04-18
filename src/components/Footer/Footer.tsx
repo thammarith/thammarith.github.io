@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
 					<i className="text-2xl mr-2 fa-brands fa-creative-commons-sa"></i>
 				</div>
 				<div className="mt-2">
-					©&nbsp;{currentYear} by Thammarith Likittheerameth
+					©&nbsp;{currentYear} Thammarith Likittheerameth
 					<br />
 					Licensed under the <a href={licenceUrl}>Creative Commons Attribution-ShareAlike 4.0 International Licence</a>
 				</div>

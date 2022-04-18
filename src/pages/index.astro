@@ -1,8 +1,38 @@
 ---
+import { renderImg } from 'astro-imagetools/api';
+
+// import RevueNewsLetter from '@components/RevueNewsLetter/RevueNewsLetter.tsx';
+import BlogBlock from '@components/BlogBlock/BlogBlock.tsx';
+import Footer from '@components/Footer/Footer.tsx';
+import { allArticles_published_forThumbnail, getImageUrl, getBlogUrl, baseUrl } from '@constants/urls.ts';
 import Layout from '@layouts/GlobalLayout.astro'
 
-import RevueNewsLetter from '@components/RevueNewsLetter/RevueNewsLetter.tsx';
-import Footer from '@components/Footer/Footer.tsx';
+const result = await fetch(allArticles_published_forThumbnail).then(res => res.json());
+const data = result.data.map(({ id, title, cover_image, slug, date_created }) => ({
+	id, title, slug, date_created,
+	coverImage: getImageUrl(cover_image),
+	url: getBlogUrl(Astro.canonicalURL.origin ?? baseUrl, slug),
+}));
+
+const _publishedEntries = await Promise.all(data.map(async e => {
+	const { link, style, img } = await renderImg({
+		src: e.coverImage,
+		alt: '',
+		aspect: 16 / 9,
+	});
+
+	return { ...e, mappedImage: { link, style, img } }
+}));
+
+const publishedEntries = [
+	..._publishedEntries,
+	..._publishedEntries,
+	..._publishedEntries,
+	..._publishedEntries,
+	..._publishedEntries,
+	..._publishedEntries,
+	..._publishedEntries,
+]
 
 ---
 
@@ -51,11 +81,9 @@ import Footer from '@components/Footer/Footer.tsx';
 
 	<div class="HomepagePanel">
 
-		<RevueNewsLetter />
+		<BlogBlock entries={publishedEntries} />
+		<!-- <RevueNewsLetter /> -->
 
-
-
-		<h2 class="text-orange-600">Proundly present</h2>
 	</div>
 
 	<Footer client:visible />

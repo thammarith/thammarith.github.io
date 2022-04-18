@@ -5,6 +5,7 @@
 		"module": "ES2022",
 		"moduleResolution": "node",
 		"paths": {
+			"@constants/*": ["src/constants/*"],
 			"@components/*": ["src/components/*"],
 			"@layouts/*": ["src/layouts/*"],
 			"@styles/*": ["src/styles/*"]
