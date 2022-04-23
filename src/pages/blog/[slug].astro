@@ -1,0 +1,55 @@
+---
+import { Markdown } from 'astro/components';
+import { Picture } from "astro-imagetools/components";
+
+import { allArticles_published, getImageUrl } from '@constants/urls.ts';
+import Layout from '@layouts/GlobalLayout.astro';
+
+export async function getStaticPaths() {
+	const result = await fetch(allArticles_published).then(res => res.json());
+	const posts = result.data;
+
+
+	return posts.map(({ content, cover_image, slug, title }) => ({
+		params: { slug },
+		props: {
+			content,
+			coverImage: getImageUrl(cover_image),
+			title,
+		},
+	}));
+}
+
+const { content, coverImage, title } = Astro.props;
+---
+
+<Layout>
+	<main class="px-8 max-w-3xl 2xl:max-w-[96rem] mx-auto">
+		<article id="blogContent">
+			<Picture
+				src={coverImage}
+				alt="A landscape image"
+				placeholder="blurred"
+				breakpoints={[640, 768, 1024, 1280, 1536]}
+			/>
+			<h1 class="font-heading text-6xl pt-16 mb-8">{title}</h1>
+			<Markdown content={content} />
+		</article>
+	</main>
+</Layout>
+
+<style lang="scss">
+#blogContent {
+	@apply font-text text-lg leading-normal;
+	@apply mb-64;
+
+	h2 {
+		@apply font-bold text-3xl;
+		@apply mt-10;
+	}
+
+	p {
+		@apply mt-6;
+	}
+}
+</style>
