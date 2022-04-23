@@ -1,0 +1,55 @@
+---
+import { Img } from "astro-imagetools/components";
+
+import { baseUrl, allArticles_published_forThumbnail, getBlogUrl, getImageUrl } from '@constants/urls.ts';
+import Layout from '@layouts/GlobalLayout.astro';
+
+const result = await fetch(allArticles_published_forThumbnail).then(res => res.json());
+const data = result.data.map(({ id, title, cover_image, slug, date_created }) => ({
+	id, title, slug, date_created,
+	coverImage: getImageUrl(cover_image),
+	url: getBlogUrl(baseUrl, slug),
+}));
+---
+
+<Layout>
+	<main class="px-8 pt-8 pb-32 max-w-3xl 2xl:max-w-[96rem] mx-auto">
+		<h1 class="font-heading font-normal text-6xl mb-16">Blog Entries</h1>
+		{
+			data.map(article => (
+				<a href={article.url} class="hover:text-orange-500">
+					<div class="flex items-start">
+						<div class="w-1/3">
+							<Img
+								src={article.coverImage}
+								alt=""
+								aspect={16 / 9}
+								placeholder="blurred"
+								quality={100}
+							/>
+						</div>
+						<div class="w-2/3 pl-8">
+							<h2 class="font-heading text-3xl">{article.title}</h2>
+						</div>
+					</div>
+				</a>
+			))
+		}
+	</main>
+</Layout>
+
+<style lang="scss">
+#blogContent {
+	@apply font-text text-lg leading-normal;
+	@apply mb-64;
+
+	h2 {
+		@apply font-bold text-3xl;
+		@apply mt-10;
+	}
+
+	p {
+		@apply mt-6;
+	}
+}
+</style>

@@ -3,3 +3,10 @@
 	@apply inline-flex items-center justify-center;
 	@apply hover:bg-slate-100 hover:text-blue-900;
 }
+
+#Footer {
+	a:not(.SocialButton) {
+		@apply text-slate-400;
+		@apply hover:text-slate-100;
+	}
+}
