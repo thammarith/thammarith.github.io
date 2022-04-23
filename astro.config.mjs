@@ -6,6 +6,7 @@ import tailwind from '@astrojs/tailwind';
 import astroImagePlugin from "astro-imagetools/plugin";
 
 export default defineConfig({
+	site: 'https://thammarith.dev',
 	integrations: [react(), tailwind()],
 	vite: {
 		plugins: [astroImagePlugin],
