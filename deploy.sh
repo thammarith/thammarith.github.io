@@ -4,13 +4,15 @@
 set -e
 
 # build
-npm run build
+npm run export
 
 # navigate into the build output directory
-cd dist
-
-# add .nojekyll to bypass GitHub Page’s default behavior
+cd out
 touch .nojekyll
+
+# cd _next
+# touch .nojekyll
+# cd ..
 
 # if you are deploying to a custom domain
 echo 'thammarith.dev' > CNAME

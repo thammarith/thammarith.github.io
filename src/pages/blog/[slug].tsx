@@ -12,7 +12,8 @@ const Blog: NextPage = props => {
 
 	return (
 		<div className="text-3xl font-bold underline">
-			{JSON.stringify(props.todo)}
+			hahaha
+			{/* {JSON.stringify(props.todo)} */}
 		</div>
 	);
 };
@@ -22,7 +23,7 @@ export async function getStaticPaths() {
 		'https://jsonplaceholder.typicode.com/todos'
 	).then(res => res.json());
 
-	const paths = todos.map(todo => ({
+	const paths = todos.map((todo: any) => ({
 		params: {
 			slug: todo.id.toString(),
 		},
@@ -34,7 +35,7 @@ export async function getStaticPaths() {
 	};
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: any }) {
 	const res = await fetch(
 		`https://jsonplaceholder.typicode.com/todos/${params.slug}`
 	);
