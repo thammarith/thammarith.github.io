@@ -22,10 +22,8 @@ const fontFamily = {
 };
 
 module.exports = {
-	mode: 'jit',
 	content: [
-		'./public/**/*.html',
-		'./src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}',
+		'./src/**/*.{js,ts,jsx,tsx}',
 	],
 	theme: {
 		extend: {},
