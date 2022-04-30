@@ -1,8 +1,10 @@
 import React from 'react';
 import cx from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCreativeCommons, faCreativeCommonsBy, faCreativeCommonsSa, faGithub, faInstagram, faLinkedinIn, faMediumM, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { GenericBlock } from '@constants/classNames';
-import { directus, licenceContent, licenceSource, nextJs, socialGitHub, socialInstagram, socialLinkedIn, socialMedium, socialTwitter, sourceUrl } from '@constants/links';
+import { directus, licenceContent, licenceSource, nextJs, socialGitHub, socialInstagram, socialLinkedIn, socialMedium, socialTwitter, sourceUrl } from '@constants/urls';
 import Markdown from '@components/Markdown/Markdown';
 
 import styles from './Footer.module.scss';
@@ -12,32 +14,32 @@ const Footer: React.FC = () => {
 
 	return (
 		<footer id={styles.Footer} className="bg-slate-900">
-			<div className={cx(GenericBlock, 'pt-16 pb-8')}>
+			<div className={cx(GenericBlock, 'pt-16 pb-32')}>
 				<h2 className="text-slate-100 font-heading font-normal text-4xl">thammarith.dev</h2>
 
-				<div className="mt-2 text-slate-200">
-					<a href={socialLinkedIn} className={styles.SocialButton}>
-						<i className="fab fa-linkedin-in"></i>
+				<div className="mt-2 text-slate-200 flex items-center">
+					<a href={socialLinkedIn} aria-label="LinkedIn" className={styles.SocialButton}>
+						<FontAwesomeIcon icon={faLinkedinIn} className="h-6" />
 					</a>
-					<a href={socialTwitter} className={styles.SocialButton}>
-						<i className="fab fa-twitter"></i>
+					<a href={socialTwitter} aria-label="Twitter" className={styles.SocialButton}>
+						<FontAwesomeIcon icon={faTwitter} className="h-6" />
 					</a>
-					<a href={socialGitHub} className={styles.SocialButton}>
-						<i className="fab fa-github"></i>
+					<a href={socialGitHub} aria-label="GitHub" className={styles.SocialButton}>
+						<FontAwesomeIcon icon={faGithub} className="h-6" />
 					</a>
-					<a href={socialInstagram} className={styles.SocialButton}>
-						<i className="fab fa-instagram"></i>
+					<a href={socialInstagram} aria-label="Instagram" className={styles.SocialButton}>
+						<FontAwesomeIcon icon={faInstagram} className="h-6" />
 					</a>
-					<a href={socialMedium} className={styles.SocialButton}>
-						<i className="fab fa-medium-m"></i>
+					<a href={socialMedium} aria-label="Medium" className={styles.SocialButton}>
+						<FontAwesomeIcon icon={faMediumM} className="h-6" />
 					</a>
 				</div>
 
-				<div id="licence" className="text-slate-500 text-sm font-text mt-16 tracking-tight">
-					<div className="mt-2">
-						<i className="text-2xl mr-2 fa-brands fa-creative-commons"></i>
-						<i className="text-2xl mr-2 fa-brands fa-creative-commons-by"></i>
-						<i className="text-2xl mr-2 fa-brands fa-creative-commons-sa"></i>
+				<div id="licence" className="text-slate-400 font-text mt-12 tracking-tight">
+					<div className="mt-2 flex">
+						<FontAwesomeIcon icon={faCreativeCommons} className="h-6 mr-2" />
+						<FontAwesomeIcon icon={faCreativeCommonsBy} className="h-6 mr-2" />
+						<FontAwesomeIcon icon={faCreativeCommonsSa} className="h-6 mr-2" />
 					</div>
 					<div className="mt-2">
 						<Markdown content={`©&nbsp;${currentYear} Thammarith Likittheerameth`} />
@@ -45,7 +47,7 @@ const Footer: React.FC = () => {
 					</div>
 				</div>
 
-				<div className="text-slate-500 text-sm font-text mt-4 tracking-tight">
+				<div className="text-slate-400 font-text mt-4 tracking-tight">
 					<Markdown content={`[Source code freely available on GitHub](${sourceUrl}) under the [GNU General Public Licence v3.0](${licenceSource})`} />
 					<Markdown content={`Crafted using [Next.js](${nextJs}), [Directus](${directus}) with love, care, passion, and sometimes frustration`} />
 				</div>

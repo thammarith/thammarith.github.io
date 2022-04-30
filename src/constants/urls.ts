@@ -1,3 +1,8 @@
+export const thammarithDev = 'https://thammarith.dev';
+
+export const baseUrl = thammarithDev;
+export const blogUrl = `${baseUrl}/blog`;
+
 export const directus = 'https://directus.io';
 export const sourceUrl = 'https://github.com/thammarith/thammarith.github.io';
 export const licenceContent = 'https://creativecommons.org/licenses/by-sa/4.0';
