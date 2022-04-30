@@ -1,12 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	// i18n: {
-	// 	locales: ['en', 'th'],
-	// 	defaultLocale: 'en',
-	// },
 	images: {
-        domains: ['thammarith.dev'],
-    },
+		domains: ['thammarith.dev', 'placekitten.com'],
+		loader: 'custom',
+	},
 	reactStrictMode: true,
 };
 

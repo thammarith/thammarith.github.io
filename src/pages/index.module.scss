@@ -1,0 +1,12 @@
+.SocialButton {
+	@apply -ml-2 mr-2 h-10 w-10 rounded-sm;
+	@apply inline-flex items-center justify-center;
+	@apply hover:bg-slate-100 hover:text-blue-900;
+}
+
+#Footer {
+	a:not(.SocialButton) {
+		@apply font-[Bitter] tracking-normal;
+		@apply hover:text-white hover:underline hover:underline-offset-4 hover:decoration-dotted;
+	}
+}
