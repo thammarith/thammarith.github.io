@@ -6,7 +6,7 @@
 
 #Footer {
 	a:not(.SocialButton) {
-		@apply font-[Bitter];
+		@apply font-[Bitter] tracking-normal;
 		@apply hover:text-white hover:underline hover:underline-offset-4 hover:decoration-dotted;
 	}
 }
