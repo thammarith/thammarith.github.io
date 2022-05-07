@@ -1,4 +1,5 @@
 export const thammarithDev = 'https://thammarith.dev';
+export const apiUrl = 'https://banmslzj.directus.app';
 
 export const baseUrl = thammarithDev;
 export const blogUrl = `${baseUrl}/blog`;

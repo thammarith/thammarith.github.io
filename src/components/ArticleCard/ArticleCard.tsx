@@ -2,9 +2,12 @@ import React from 'react';
 import Image from 'next/image';
 import cx from 'classnames';
 import imageLoader from '@helpers/imageLoader';
+import Link from 'next/link';
+import { blogPath } from '@constants/paths';
 
 type Props = {
 	title: string;
+	slug: string;
 	coverImage?: string;
 	excerpt?: string;
 	withExcerpt?: boolean;
@@ -17,26 +20,27 @@ const ArticleCard: React.FC<Props> = (props: Props) => {
 	return <ArticleCardWithImage {...props} />;
 };
 
-const ArticleCardWithImage: React.FC<Props> = ({ title, coverImage, excerpt, headingLevel, withExcerpt = true }: Props) => {
+const ArticleCardWithImage: React.FC<Props> = ({ slug, title, coverImage, excerpt, headingLevel, withExcerpt = true }: Props) => {
 	const Heading = headingLevel ?? 'h2';
 
 	return (
-		<div className={cx('my-8 overflow-clip hover:cursor-pointer', 'flex flex-col h-auto', 'md:flex-row md:h-48')}>
-			<div className="w-full aspect-video h-full relative md:w-1/2">
-				<Image
-					alt={title}
-					src="https://placekitten.com/g/1000/1000"
-					layout="fill"
-					objectFit="cover"
-					unoptimized={true}
-					loader={imageLoader}
-				/>
+		<Link
+			href={{
+				pathname: blogPath,
+				query: { slug },
+			}}
+			passHref={true}
+		>
+			<div className={cx('my-8 overflow-clip hover:cursor-pointer', 'flex flex-col h-auto', 'md:flex-row md:h-48')}>
+				<div className="w-full aspect-video h-full relative md:w-1/2">
+					<Image alt={title} src="https://placekitten.com/g/1000/1000" layout="fill" objectFit="cover" unoptimized={true} loader={imageLoader} />
+				</div>
+				<div className="mt-4 md:w-1/2 md:mt-0 md:ml-8 md:h-full">
+					<Heading className="font-heading text-4xl leading-9">{title}</Heading>
+					{withExcerpt && <p className="mt-4 font-text text-lg">{excerpt}</p>}
+				</div>
 			</div>
-			<div className="mt-4 md:w-1/2 md:mt-0 md:ml-8 md:h-full">
-				<Heading className="font-heading text-4xl leading-9">{title}</Heading>
-				{withExcerpt && <p className="mt-4 font-text text-lg">{excerpt}</p>}
-			</div>
-		</div>
+		</Link>
 	);
 };
 

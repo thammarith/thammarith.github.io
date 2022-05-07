@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 
-const NavBar = dynamic(() => import('@components/NavBar/NavBar'))
-const Footer = dynamic(() => import('@components/Footer/Footer'))
+const NavBar = dynamic(() => import('@components/NavBar/NavBar'));
+const Footer = dynamic(() => import('@components/Footer/Footer'));
 
 type Props = {
 	withNavbar?: boolean;

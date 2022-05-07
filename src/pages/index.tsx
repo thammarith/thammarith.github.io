@@ -9,8 +9,14 @@ import GlobalLayout from '@layouts/GlobalLayout';
 
 import styles from './index.module.scss';
 import ArticleCard from '@components/ArticleCard/ArticleCard';
+import { getBlogPreviews } from 'src/apis/blogApi';
+import { BlogPreview } from 'src/interfaces/BlogPost';
 
-const Home: NextPage = () => {
+type Props = {
+	blogPreviews: BlogPreview[];
+};
+
+const Home: NextPage<Props> = (props: Props) => {
 	const ChevronDoubleDown = ({ className }: { className: string }) => (
 		<svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 			<path d="M441.9 89.7L232.5 299.1c-4.7 4.7-12.3 4.7-17 0L6.1 89.7c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L224 233.6 405.1 52.9c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17zm0 143l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 393.6 42.9 212.9c-4.7-4.7-12.3-4.7-17 0L6.1 232.7c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z" />
@@ -68,23 +74,27 @@ const Home: NextPage = () => {
 			<h2 className="font-heading text-6xl mb-12 mt-8 md:mt-16">Latest from the Blog</h2>
 
 			<ArticleCard
+				slug="1"
 				headingLevel="h3"
 				title="ใช้ iPad x Raspberry Pi 4 แทนคอม เวิร์คหรือโวะ?"
 				excerpt="เรื่องมันมีอยู่ว่า คอมผมแบตบวม จะไปส่งซ่อมเห็นเราคาแล้วก็บาย คอมราคาสองหมื่นต้น ๆ ราคาเปลี่ยนแบตที่ศูนย์ล่อไปแปดพันบาท! บ้าไปแล้ว! แต่ปัญหาก็คือต้องใช้คอม ไม่ใช้ก็ไม่ได้ ชีวิตติดโค้ด เลยนึกขึ้นได้ว่า..."
 			/>
 			<ArticleCard
+				slug="1"
 				headingLevel="h3"
 				title="ถามแบบนี้สิได้คำตอบ"
 				excerpt="จังหวะโคตรพอดี Raspberry Pi 4 ที่เคยสั่งไว้กับคีย์บอร์ด Keychron K3 ที่สั่งไว้ (และกว่าจะมาถึง...) ก็มาถึงในเวลาใกล้ ๆ กัน เลยได้เวลาจับมาลองเล่นดู..."
 				textOnly
 			/>
 			<ArticleCard
+				slug="1"
 				headingLevel="h3"
 				title="ถามแบบนี้สิได้คำตอบ"
 				excerpt="จังหวะโคตรพอดี Raspberry Pi 4 ที่เคยสั่งไว้กับคีย์บอร์ด Keychron K3 ที่สั่งไว้ (และกว่าจะมาถึง...) ก็มาถึงในเวลาใกล้ ๆ กัน เลยได้เวลาจับมาลองเล่นดู..."
 				textOnly
 			/>
 			<ArticleCard
+				slug="1"
 				headingLevel="h3"
 				title="ถามแบบนี้สิได้คำตอบ"
 				excerpt="จังหวะโคตรพอดี Raspberry Pi 4 ที่เคยสั่งไว้กับคีย์บอร์ด Keychron K3 ที่สั่งไว้ (และกว่าจะมาถึง...) ก็มาถึงในเวลาใกล้ ๆ กัน เลยได้เวลาจับมาลองเล่นดู..."
@@ -100,5 +110,11 @@ const Home: NextPage = () => {
 		</GlobalLayout>
 	);
 };
+
+export async function getStaticProps() {
+	const blogPreviews = await getBlogPreviews();
+	console.log(blogPreviews)
+	return { props: { blogPreviews } };
+}
 
 export default Home;
