@@ -6,7 +6,7 @@ import BlogBlock from '@components/BlogBlock/BlogBlock.tsx';
 import { allArticles_published_forThumbnail, getImageUrl, getBlogUrl, baseUrl } from '@constants/urls.ts';
 import Layout from '@layouts/GlobalLayout.astro'
 
-const result = await fetch(allArticles_published_forThumbnail).then(res => res.json());
+const result = { data: []} // await fetch(allArticles_published_forThumbnail).then(res => res.json());
 const data = result.data.map(({ id, title, cover_image, slug, date_created }) => ({
 	id, title, slug, date_created,
 	coverImage: getImageUrl(cover_image),
