@@ -1,0 +1,26 @@
+{
+	"name": "thammarith.github.io",
+	"version": "1.0.0",
+	"description": "[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/starter)",
+	"main": "index.js",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/thammarith/thammarith.github.io.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "GPLv3",
+	"bugs": {
+		"url": "https://github.com/thammarith/thammarith.github.io/issues"
+	},
+	"homepage": "https://github.com/thammarith/thammarith.github.io#readme",
+	"dependencies": {
+		"astro": "^1.0.0-beta.73"
+	}
+}
