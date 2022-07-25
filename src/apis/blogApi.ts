@@ -9,15 +9,20 @@ export const fetchData = async (path: string, query?: Query) => {
 
 	console.log(`Info: fetching ${url}`);
 
-	const res = await fetch(url);
-	const json = await res.json();
+	try {
+		const res = await fetch(url);
+		const json = await res.json();
 
-	if (json.errors) {
-		console.error(json.errors);
-		throw new Error('Failed to fetch API');
+		if (json.errors) {
+			console.error(json.errors);
+			throw new Error('Failed to fetch API');
+		}
+
+		return json.data;
+	} catch (e) {
+		console.error(e);
+		return [];
 	}
-
-	return json.data;
 };
 
 export const getBlogPreviews = async () =>
