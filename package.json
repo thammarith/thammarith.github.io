@@ -22,5 +22,9 @@
 	"homepage": "https://github.com/thammarith/thammarith.github.io#readme",
 	"dependencies": {
 		"astro": "^1.0.0-beta.73"
+	},
+	"devDependencies": {
+		"prettier": "^2.7.1",
+		"prettier-plugin-astro": "^0.1.2"
 	}
 }
