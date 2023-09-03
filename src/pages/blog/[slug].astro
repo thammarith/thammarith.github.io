@@ -2,13 +2,13 @@
 import { Markdown } from 'astro/components';
 import { Picture } from "astro-imagetools/components";
 
-import { allArticles_published, getImageUrl } from '@constants/urls.ts';
+import { allArticles_published, getImageUrl } from '@constants/urls';
 import Layout from '@layouts/GlobalLayout.astro';
 
 export async function getStaticPaths() {
-	const result = await fetch(allArticles_published).then(res => res.json());
-	const posts = result.data;
-
+	// const result = await fetch(allArticles_published).then(res => res.json());
+	// const posts = result.data;
+	const posts = [];
 
 	return posts.map(({ content, cover_image, slug, title }) => ({
 		params: { slug },

@@ -1,27 +1,27 @@
 ---
-import { renderImg } from 'astro-imagetools/api';
+// import { renderImg } from 'astro-imagetools/api';
 
 // import RevueNewsLetter from '@components/RevueNewsLetter/RevueNewsLetter.tsx';
-import BlogBlock from '@components/BlogBlock/BlogBlock.tsx';
-import { allArticles_published_forThumbnail, getImageUrl, getBlogUrl, baseUrl } from '@constants/urls.ts';
+// import BlogBlock from '@components/BlogBlock/BlogBlock';
+// import { allArticles_published_forThumbnail, getImageUrl, getBlogUrl, baseUrl } from '@constants/urls';
 import Layout from '@layouts/GlobalLayout.astro'
 
-const result = { data: []} // await fetch(allArticles_published_forThumbnail).then(res => res.json());
-const data = result.data.map(({ id, title, cover_image, slug, date_created }) => ({
-	id, title, slug, date_created,
-	coverImage: getImageUrl(cover_image),
-	url: getBlogUrl(baseUrl, slug),
-}));
+// const result = { data: [] } // await fetch(allArticles_published_forThumbnail).then(res => res.json());
+// const data = result.data.map(({ id, title, cover_image, slug, date_created }) => ({
+// 	id, title, slug, date_created,
+// 	coverImage: getImageUrl(cover_image),
+// 	url: getBlogUrl(baseUrl, slug),
+// }));
 
-const publishedEntries = await Promise.all(data.map(async e => {
-	const { link, style, img } = await renderImg({
-		src: e.coverImage,
-		alt: '',
-		aspect: 16 / 9,
-	});
+// const publishedEntries = await Promise.all(data.map(async e => {
+// 	const { link, style, img } = await renderImg({
+// 		src: e.coverImage,
+// 		alt: '',
+// 		aspect: 16 / 9,
+// 	});
 
-	return { ...e, mappedImage: { link, style, img } }
-}));
+// 	return { ...e, mappedImage: { link, style, img } }
+// }));
 ---
 
 <Layout noHeader={true}>
@@ -68,7 +68,7 @@ const publishedEntries = await Promise.all(data.map(async e => {
 	<div class="HomepagePanel">
 		<!-- <RevueNewsLetter /> -->
 
-		<BlogBlock entries={publishedEntries} />
+		<!-- <BlogBlock entries={publishedEntries} /> -->
 
 	</div>
 </Layout>
