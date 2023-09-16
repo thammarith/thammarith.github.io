@@ -1,17 +1,16 @@
 {
+	"extends": "astro/tsconfigs/strict",
 	"compilerOptions": {
 		"baseUrl": ".",
-		"isolatedModules": true,
-		"module": "ES2022",
-		"moduleResolution": "node",
+		"jsx": "preserve",
+		"jsxImportSource": "solid-js",
 		"paths": {
 			"@assets/*": ["src/assets/*"],
-			"@constants/*": ["src/constants/*"],
 			"@components/*": ["src/components/*"],
 			"@layouts/*": ["src/layouts/*"],
-			"@styles/*": ["src/styles/*"]
+			"@libs/*": ["src/libs/*"],
+			"@vendors/*": ["src/vendors/*"]
 		},
-		"resolveJsonModule": true,
-		"types": ["astro/env"]
+		"verbatimModuleSyntax": true
 	}
 }
