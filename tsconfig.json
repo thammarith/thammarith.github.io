@@ -1,13 +1,16 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
+	"extends": "astro/tsconfigs/strict",
+	"compilerOptions": {
 		"baseUrl": ".",
 		"jsx": "preserve",
 		"jsxImportSource": "solid-js",
 		"paths": {
+			"@assets/*": ["src/assets/*"],
 			"@components/*": ["src/components/*"],
-			"@layouts/*": ["src/layouts/*"]
+			"@layouts/*": ["src/layouts/*"],
+			"@libs/*": ["src/libs/*"],
+			"@vendors/*": ["src/vendors/*"]
 		},
 		"verbatimModuleSyntax": true
-  }
+	}
 }

@@ -1,4 +1,10 @@
 ---
+import Footer from '@components/Footer.tsx';
+import SocialButton, { socials } from '@components/SocialButton.tsx';
+import Agoda from '@assets/logos/agoda.svg';
+
+import '@fortawesome/fontawesome-free/css/fontawesome.css';
+import '@fortawesome/fontawesome-free/css/brands.css';
 ---
 
 <html lang="en">
@@ -8,18 +14,44 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Figtree&family=Instrument+Sans&family=Inter&family=Poppins&display=swap" rel="stylesheet">
-
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400&display=swap" rel="stylesheet" />
 	</head>
 	<body>
-		<section>
-
-		</section>
-		<!-- <div class="p-12 text-4xl">
-			<h1 class="mt-8 font-['Inter']">Thammarith Likittheerameth</h1>
-			<h1 class="mt-8 font-['Poppins']">Thammarith Likittheerameth</h1>
-		</div> -->
+		<main>
+			<section class="px-8 sm:px-16 bg-slate-900 min-h-[92svh] flex flex-grow-0 items-center justify-center">
+				<header class="w-full max-w-[72ch] text-white font-['Figtree']">
+					<h1 class="font-['Poppins'] text-4xl sm:text-6xl font-semibold">
+						Thammarith
+						<br />
+						 Likittheerameth
+					</h1>
+					<div class="mt-2 text-base">
+						Senior Software Engineer <!--
+						-->
+						<wbr />@<!--
+						-->&nbsp;<a href="https://careersatagoda.com">
+							<img src={Agoda.src} class="inline-block h-4" alt="Agoda" />
+						</a>
+						<!-- <br />
+						Greater Bangkok, Thailand -->
+					</div>
+					<p class="mt-8 max-w-lg">
+						Base in Bangkok, my home address is <code>localhost:3000</code>, built with my trusty tools:
+						React, TypeScript, and, sometimes, unintended features.
+					</p>
+					<div class="-ml-3 mt-8 flex items-center flex-wrap">
+						{socials.map((social) => <SocialButton social={social} />)}
+					</div>
+					<!-- <div>
+						Scroll down for about me, blog posts, and cat images
+					</div> -->
+				</header>
+			</section>
+			<section></section>
+		</main>
+		<Footer />
 	</body>
 </html>
