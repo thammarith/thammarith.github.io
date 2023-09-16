@@ -7,7 +7,7 @@ const Footer: Component = () => (
 		<div class="w-full max-w-[72ch] text-white font-['Figtree']">
 			<h2 class="text-slate-100 font-['Poppins'] font-semibold text-3xl">thammarith.dev</h2>
 
-			<div id="licence" class="font-text mt-12 text-slate-300">
+			<div id="licence" class="font-text mt-12 text-slate-400">
 				<div class="flex gap-1">
 					<i class="text-2xl fa-brands fa-creative-commons" />
 					<i class="text-2xl fa-brands fa-creative-commons-by" />
