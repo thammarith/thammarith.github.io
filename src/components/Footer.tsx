@@ -15,15 +15,22 @@ const Footer: Component = () => (
 				</div>
 				<p class="mt-2">©&nbsp;2023 Thammarith Likittheerameth</p>
 				<p>
-					Licensed under the{' '}
+					Licensed under the&nbsp;
 					<Link href="https://creativecommons.org/licenses/by-sa/4.0">
 						Creative Commons Attribution-ShareAlike 4.0 International Licence
 					</Link>
 				</p>
 				<p class="mt-4">
-					<Link href="https://github.com/thammarith/thammarith.github.io">Source code freely available on GitHub</Link> under the <Link href="https://github.com/thammarith/thammarith.github.io/blob/master/LICENCE">GNU General Public Licence v3.0</Link>
+					<Link href="https://github.com/thammarith/thammarith.github.io">
+						Source code freely available on GitHub
+					</Link>
+					&nbsp;under the&nbsp;
+					<Link href="https://github.com/thammarith/thammarith.github.io/blob/master/LICENCE">
+						GNU General Public Licence v3.0
+					</Link>
 					<br />
-					Crafted using <Link href="https://astro.build">Astro</Link> with love, care, passion, and occasional despair
+					Crafted using <Link href="https://astro.build">Astro</Link> with love, care, passion, and occasional
+					despair
 				</p>
 			</div>
 		</div>
