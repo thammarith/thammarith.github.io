@@ -29,7 +29,7 @@ const getLogo = (slug: Props['slug']): ImageMetadata => {
 const getServiceYear = (positions: Props['positions']) => {
 	const [start, end] = [positions.at(-1)?.startDate?.getFullYear(), positions.at(0)?.endDate?.getFullYear()]
 	if (start === end) return `${start}`;
-	return`${start} – ${end ?? 'Present'}`;
+	return`${start} – ${end ?? 'present'}`;
 }
 
 export const ExperienceCard: Component<Props> = (props) => (
