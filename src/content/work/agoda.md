@@ -1,0 +1,11 @@
+---
+slug: 'agoda'
+name: 'Agoda'
+location: 'Bangkok, Thailand'
+positions:
+    - title: Senior Software Engineer
+      startDate: 2022-07-01
+    - title: Full Stack Software Engineer
+      startDate: 2020-03-30
+      endDate: 2022-06-30
+---

@@ -1,0 +1,9 @@
+---
+slug: 'viabus'
+name: 'ViaBus'
+location: 'Bangkok, Thailand'
+positions:
+    - title: Full Stack Engineer
+      startDate: 2018-12-01
+      endDate: 2020-03-27
+---
