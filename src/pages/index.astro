@@ -1,63 +1,50 @@
 ---
 import Agoda from '@assets/logos/agoda-wordmark-white.svg';
-import Footer from '@components/Footer.tsx';
 import SocialButton, { socials } from '@components/SocialButton.tsx';
 import Experience from '@components/index/Experience.astro';
+
+import BaseLayout from '@layouts/BaseLayout.astro';
 
 import '@fortawesome/fontawesome-free/css/fontawesome.css';
 import '@fortawesome/fontawesome-free/css/solid.css';
 import '@fortawesome/fontawesome-free/css/brands.css';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
-		<meta name="description" content="Thammarith Likittheerameth's personal website and blog" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Thammarith Likittheerameth</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400&display=swap" rel="stylesheet" />
-	</head>
-	<body>
-		<main>
-			<section class="px-8 sm:px-16 bg-slate-900 min-h-[max(92svh,_32rem)] flex flex-grow-0 items-center justify-center">
-				<header class="w-full max-w-[72ch] text-white font-['Figtree']">
-					<h1 class="font-['Poppins'] text-4xl sm:text-6xl font-semibold">
-						Thammarith
-						<br />
-						 Likittheerameth
-					</h1>
-					<div class="mt-2 text-base">
-						Senior Software Engineer <!--
+<BaseLayout title="Thammarith’s">
+	<main>
+		<section
+			class="px-8 sm:px-16 bg-slate-900 min-h-[max(92svh,_32rem)] flex flex-grow-0 items-center justify-center"
+		>
+			<header class="w-full max-w-[72ch] text-white font-['Figtree']">
+				<h1 class="font-['Poppins'] text-4xl sm:text-6xl font-semibold">
+					Thammarith
+					<br />
+					 Likittheerameth
+				</h1>
+				<div class="mt-2 text-base">
+					Senior Software Engineer <!--
 						-->
-						<wbr />@<!--
+					<wbr />@<!--
 						-->&nbsp;<a href="https://careersatagoda.com">
-							<img src={Agoda.src} class="inline-block h-4" alt="Agoda" />
-						</a>
-						<!-- <br />
+						<img src={Agoda.src} class="inline-block h-4" alt="Agoda" />
+					</a>
+					<!-- <br />
 						Greater Bangkok, Thailand -->
-					</div>
-					<p class="mt-8 max-w-xl">
-						Based in Bangkok, my home address is <code>localhost:3000</code>, built with my trusty tools:
-						React, TypeScript, and, sometimes, unintended features
-					</p>
-					<div class="-ml-3 mt-8 flex items-center flex-wrap">
-						{socials.map((social) => <SocialButton social={social} />)}
-					</div>
-					<!-- <div>
+				</div>
+				<p class="mt-8 max-w-xl">
+					Based in Bangkok, my home address is <code>localhost:3000</code>, built with my trusty tools: React,
+					TypeScript, and, sometimes, unintended features
+				</p>
+				<div class="-ml-3 mt-8 flex items-center flex-wrap">
+					{socials.map((social) => <SocialButton social={social} />)}
+				</div>
+				<!-- <div>
 						Scroll down for about me, blog posts, and cat images
 					</div> -->
-				</header>
-			</section>
-			<section class="px-8 sm:px-16 flex flex-grow-0 items-center justify-center">
-				<Experience />
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+			</header>
+		</section>
+		<section class="px-8 sm:px-16 flex flex-grow-0 items-center justify-center">
+			<Experience />
+		</section>
+	</main>
+</BaseLayout>
