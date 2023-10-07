@@ -2,9 +2,15 @@ import type { Component } from 'solid-js';
 
 import Link from './Link';
 
+const ThaiWebRing = () => (
+	<a class="block mt-12" href="https://webring.wonderful.software#thammarith.dev" title="วงแหวนเว็บ">
+		<img class="w-8 h-8 opacity-80" alt="วงแหนเว็บ" src="https://webring.wonderful.software/webring.white.svg" />
+	</a>
+);
+
 const Footer: Component = () => (
-	<footer class="px-8 py-16 sm:px-16 bg-slate-900 flex flex-grow-0 items-center justify-center">
-		<div class="w-full max-w-[72ch] text-white font-['Figtree']">
+	<footer class="px-8 py-16 sm:px-16 bg-slate-900 flex flex-col flex-grow-0 items-center justify-center">
+		<div class="relative w-full max-w-[72ch] text-white font-['Figtree']">
 			<h2 class="text-slate-100 font-['Poppins'] font-semibold text-3xl">thammarith.dev</h2>
 
 			<div id="licence" class="font-text mt-12 text-slate-400">
@@ -34,6 +40,7 @@ const Footer: Component = () => (
 				</p>
 			</div>
 		</div>
+		<ThaiWebRing />
 	</footer>
 	// <a
 	// 	class={[

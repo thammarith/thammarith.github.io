@@ -1,6 +1,7 @@
 // This can be moved out to their own schemas
 // https://docs.astro.build/en/guides/content-collections/#defining-multiple-collections
 import { defineCollection, z } from 'astro:content';
+import { rssSchema } from '@astrojs/rss';
 
 const articleCollection = defineCollection({
 	type: 'content',
@@ -14,9 +15,13 @@ const articleCollection = defineCollection({
 const blogCollection = defineCollection({
 	type: 'content',
 	schema: z.object({
+		kicker: z.string().optional(),
 		title: z.string(),
+		subtitle: z.string().optional(),
+		excerpt: z.string().optional(),
 		tags: z.array(z.string()),
 		image: z.string().optional(),
+		pubDate: z.date(),
 	}),
 });
 
