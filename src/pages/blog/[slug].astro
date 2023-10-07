@@ -2,6 +2,9 @@
 import { getCollection } from 'astro:content';
 
 import BaseLayout from '@layouts/BaseLayout.astro';
+import BaseResponsive from '@layouts/BaseResponsive.astro';
+
+import './blog.css';
 
 export async function getStaticPaths() {
 	const blogEntries = await getCollection('blog');
@@ -16,10 +19,24 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout>
-	<!-- <div>
-		{JSON.stringify(entry)}
-	</div> -->
-
-	<h1>{entry.data.title}</h1>
-	<Content />
+	<link
+		slot="head"
+		href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600&display=swap"
+		rel="stylesheet"
+	/>
+	<link
+		slot="head"
+		href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@400&display=swap"
+		rel="stylesheet"
+	/>
+	<BaseResponsive>
+		<article id="blogPost">
+			<header class="mt-8">
+				<h1 class="text-5xl font-semibold">{entry.data.title}</h1>
+			</header>
+			<section id="blogContent" class="mt-6 font-['Noto_Sans_Thai_Looped'] font-normal text-lg">
+				<Content />
+			</section>
+		</article>
+	</BaseResponsive>
 </BaseLayout>

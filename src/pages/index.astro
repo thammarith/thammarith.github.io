@@ -2,6 +2,7 @@
 import Agoda from '@assets/logos/agoda-wordmark-white.svg';
 import SocialButton, { socials } from '@components/SocialButton.tsx';
 import Experience from '@components/index/Experience.astro';
+import RecentPosts from '@components/index/RecentPosts.astro';
 
 import BaseLayout from '@layouts/BaseLayout.astro';
 
@@ -42,6 +43,9 @@ import '@fortawesome/fontawesome-free/css/brands.css';
 						Scroll down for about me, blog posts, and cat images
 					</div> -->
 			</header>
+		</section>
+		<section class="px-8 sm:px-16 flex flex-grow-0 items-center justify-center">
+			<RecentPosts />
 		</section>
 		<section class="px-8 sm:px-16 flex flex-grow-0 items-center justify-center">
 			<Experience />

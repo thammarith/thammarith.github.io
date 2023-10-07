@@ -11,7 +11,9 @@ const ThaiWebRing = () => (
 const Footer: Component = () => (
 	<footer class="px-8 py-16 sm:px-16 bg-slate-900 flex flex-col flex-grow-0 items-center justify-center">
 		<div class="relative w-full max-w-[72ch] text-white font-['Figtree']">
-			<h2 class="text-slate-100 font-['Poppins'] font-semibold text-3xl">thammarith.dev</h2>
+			<a href="https://thammarith.dev" class="inline-block px-4 py-2 -mx-4 -my-2 hover:bg-slate-700 hover:rounded">
+				<h2 class="text-slate-100 font-['Poppins'] font-semibold text-3xl">thammarith.dev</h2>
+			</a>
 
 			<div id="licence" class="font-text mt-12 text-slate-400">
 				<div class="flex gap-1">
