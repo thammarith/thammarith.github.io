@@ -1,0 +1,1 @@
+With 10+ years of web developement, I started my first HTML tag when I was in a secondary school, back when we use tables to create unique and interesting page layouts, and IE6 was still a thing. My favourite tags are `<marquee>` and `<blink>`.
