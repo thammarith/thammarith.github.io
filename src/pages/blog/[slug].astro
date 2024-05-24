@@ -21,20 +21,20 @@ const { Content } = await entry.render();
 <BaseLayout>
 	<link
 		slot="head"
-		href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&family=Noto+Serif+Thai:wght@100..900&display=swap"
 		rel="stylesheet"
 	/>
-	<link
+	<!-- <link
 		slot="head"
 		href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@400&display=swap"
 		rel="stylesheet"
-	/>
+	/> -->
 	<BaseResponsive>
 		<article id="blogPost">
 			<header class="mt-8">
 				<h1 class="text-5xl font-semibold">{entry.data.title}</h1>
 			</header>
-			<section id="blogContent" class="mt-6 font-['Noto_Sans_Thai_Looped'] font-normal text-lg">
+			<section id="blogContent" class="mt-6 font-['Noto_Serif_Thai'] font-normal text-lg">
 				<Content />
 			</section>
 		</article>
