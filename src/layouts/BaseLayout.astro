@@ -1,7 +1,8 @@
 ---
 import Footer from '@components/Footer.tsx';
+import { generateTitle } from 'src/utils/titleUtils';
 
-const { title = 'thammarith.dev', description = 'Thammarith’s personal website and blog' } = Astro.props;
+const { title, description = 'Thammarith’s personal website and blog' } = Astro.props;
 ---
 
 <html lang="en">
@@ -12,11 +13,17 @@ const { title = 'thammarith.dev', description = 'Thammarith’s personal website
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{generateTitle(title)}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400&display=swap" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,600&display=swap"
+		/>
 		<slot name="head" />
 	</head>
 	<body>

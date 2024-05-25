@@ -1,30 +1,55 @@
 ---
+import { getBlogEntries } from 'src/utils/contentUtils';
 import { parseStringPromise } from 'xml2js';
 
 const content = await fetch('https://medium.com/feed/@thammarith')
 	.then((response) => response.text())
 	.then((xml) => parseStringPromise(xml));
+
+const blogContent = await getBlogEntries(true);
 ---
 
 <div class="w-full mt-16 max-w-[72ch] font-['Figtree']">
 	<h2 class="text-2xl font-semibold mb-8">Lastest from my printing press</h2>
 	<div>
 		{
-			content.rss.channel.at(0)?.item?.map((i: any) => (
-				<a class="block mt-4 hover:text-blue-700" href={i.link.at(0)}>
+			blogContent.map((b) => (
+				<a class="block mt-4 hover:text-blue-700" href={`/blog/${b.slug}`}>
 					<h3 class="text-lg font-semibold">
-						<i class="fa-brands fa-medium me-2" />
-						{i.title.at(0)}
+						<i class="fa-solid fa-blog me-2" />
+						{b.data.title}
 					</h3>
 					<p>
-						{new Date(i.pubDate.at(0)).toLocaleDateString('en-gb', {
+						{new Date(b.data.pubDate).toLocaleDateString('en-gb', {
 							year: 'numeric',
 							month: 'short',
 							day: 'numeric',
 						})}
+						&nbsp;&mdash;&nbsp;
+						{b.data.subtitle}
 					</p>
 				</a>
-			)).filter((_, i) => i < 5)
+			))
+		}
+		{
+			content.rss.channel
+				.at(0)
+				?.item?.map((i: any) => (
+					<a class="block mt-4 hover:text-blue-700" href={i.link.at(0)}>
+						<h3 class="text-lg font-semibold">
+							<i class="fa-brands fa-medium me-2" />
+							{i.title.at(0)}
+						</h3>
+						<p>
+							{new Date(i.pubDate.at(0)).toLocaleDateString('en-gb', {
+								year: 'numeric',
+								month: 'short',
+								day: 'numeric',
+							})}
+						</p>
+					</a>
+				))
+				?.filter((_: any, i: number) => i < 3)
 		}
 		<!-- {workContent.map(w => <ExperienceCard slug={w.data.slug} positions={w.data.positions} />)} -->
 	</div>

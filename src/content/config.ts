@@ -15,6 +15,7 @@ const articleCollection = defineCollection({
 const blogCollection = defineCollection({
 	type: 'content',
 	schema: z.object({
+		isDraft: z.boolean().optional().default(false),
 		kicker: z.string().optional(),
 		title: z.string(),
 		subtitle: z.string().optional(),

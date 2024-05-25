@@ -1,8 +1,9 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
+import { EntryType } from 'src/constants/entryTypes';
 
 export const GET = async (context: any) => {
-	const blogEntries = await getCollection('blog');
+	const blogEntries = await getCollection(EntryType.BLOG);
 
 	const entries = blogEntries.map((post) => ({
 		title: post.data.title,

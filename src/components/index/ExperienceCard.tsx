@@ -36,7 +36,7 @@ export const ExperienceCard: Component<Props> = (props) => (
 	<div class="flex-auto md:flex-1 shadow-lg p-8 rounded">
 		<div class="flex gap-4 md:block">
 			<div class="w-20 h-12 flex items-center justify-start">
-				<img src={getLogo(props.slug).src} class="max-h-8" />
+				<img src={getLogo(props.slug).src} alt={props.slug} class="max-h-8" />
 			</div>
 			<div>
 				<h4 class="font-semibold text-lg">{getPeakPosition(props.positions)}</h4>
