@@ -21,9 +21,9 @@ const Footer: Component = () => (
 					<i class="text-2xl fa-brands fa-creative-commons-by" />
 					<i class="text-2xl fa-brands fa-creative-commons-sa" />
 				</div>
-				<p class="mt-2">©&nbsp;2023 Thammarith Likittheerameth</p>
+				<p class="mt-2">©&nbsp;{new Date().getFullYear()} Thammarith Likittheerameth</p>
 				<p>
-					Licensed under the&nbsp;
+					Content licensed under the&nbsp;
 					<Link href="https://creativecommons.org/licenses/by-sa/4.0">
 						Creative Commons Attribution-ShareAlike 4.0 International Licence
 					</Link>
