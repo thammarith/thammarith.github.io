@@ -1,1 +1,1 @@
-export const generateTitle = (title?: string) => title ? 'Thammarith' : `${title} | Thammarith`;
+export const generateTitle = (title?: string) => title ? `${title} | Thammarith` : 'Thammarith';
