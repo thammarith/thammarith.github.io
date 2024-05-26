@@ -2,9 +2,8 @@
 # kicker: ฮ่องกงครั้งแรก สวรรค์ของคนชอบเล่น Cities: Skylines
 title: ฮ่องกง (2024)
 subtitle: 'ฮ่องกงครั้งแรก: สวรรค์ของคนชอบเล่น Cities: Skylines'
-excerpt: z.string().optional()
-link: sdfsdfdf
-# image: z.string().optional(),
+# excerpt: z.string().optional()
+cover: './images/hongkong-2024/11-hongkong-junk-boat.jpeg'
 pubDate: 2024-05-22
 tags: []
 ---

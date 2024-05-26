@@ -14,16 +14,21 @@ const articleCollection = defineCollection({
 
 const blogCollection = defineCollection({
 	type: 'content',
-	schema: z.object({
-		isDraft: z.boolean().optional().default(false),
-		kicker: z.string().optional(),
-		title: z.string(),
-		subtitle: z.string().optional(),
-		excerpt: z.string().optional(),
-		tags: z.array(z.string()),
-		image: z.string().optional(),
-		pubDate: z.date(),
-	}),
+	schema: ({ image }) =>
+		z.object({
+			isDraft: z.boolean().optional().default(false),
+			kicker: z.string().optional(),
+			title: z.string(),
+			subtitle: z.string().optional(),
+			excerpt: z.string().optional(),
+			tags: z.array(z.string()),
+			cover: image()
+				.refine((img) => img.width >= 1080, {
+					message: 'Cover image must be at least 1080 pixels wide!',
+				})
+				.optional(),
+			pubDate: z.date(),
+		}),
 });
 
 const workCollection = defineCollection({
@@ -41,7 +46,7 @@ const workCollection = defineCollection({
 				endDate: z.date().optional(),
 				// description: z.string().optional(),
 				// responsibilites: z.array(z.string()).optional(),
-			})
+			}),
 		),
 	}),
 });

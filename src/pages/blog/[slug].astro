@@ -6,6 +6,9 @@ import BaseResponsive from '@layouts/BaseResponsive.astro';
 
 import './blog.css';
 import { EntryType } from 'src/constants/entryTypes';
+import { Image } from 'astro:assets';
+import { buildBlogUrl } from 'src/utils/urlUtils';
+import { generateTitle } from 'src/utils/titleUtils';
 
 export async function getStaticPaths() {
 	const blogEntries = await getCollection(EntryType.BLOG);
@@ -19,10 +22,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BaseLayout
-	title={entry.data.title}
-	description={entry.data.subtitle}
->
+<BaseLayout title={entry.data.title} description={entry.data.subtitle}>
 	<link
 		slot="head"
 		rel="stylesheet"
@@ -38,11 +38,29 @@ const { Content } = await entry.render();
 		href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@300;500&display=swap"
 		rel="stylesheet"
 	/>
+
+	<meta slot="head" property="og:title" content={generateTitle(entry.data.title)} />
+	<meta slot="head" property="og:description" content={entry.data.subtitle} />
+	<meta slot="head" property="og:url" content={buildBlogUrl(Astro.site?.href, entry.slug)} />
+	<meta slot="head" property="og:image" content={entry.data.cover?.src} />
+
 	<BaseResponsive>
 		<article id="blogPost">
 			<header class="mt-8">
 				<h1 class="text-5xl font-semibold">{entry.data.title}</h1>
+				{
+					entry.data.cover && (
+						<div class="flex items-center justify-center max-w-[100vw] w-[100vw] left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] relative mt-12">
+							<Image
+								src={entry.data.cover}
+								alt={entry.data.title}
+								class="max-w-[96ch] w-screen lg:rounded-lg"
+							/>
+						</div>
+					)
+				}
 			</header>
+			<!-- // class="relative max-w-[100vw] w-svw mt-12" -->
 			<section id="blogContent" class="mt-6 font-['Noto_Sans_Thai_Looped'] font-normal text-lg">
 				<Content />
 			</section>
