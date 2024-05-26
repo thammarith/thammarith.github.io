@@ -29,14 +29,10 @@
 	& :is(ol, ul) {
 		@apply font-light;
 		@apply mt-6;
-
-		& > li {
-			@apply ml-5;
-		}
 	}
 
-	& ol > li {
-		@apply list-decimal;
+	& ol {
+		@apply list-decimal list-inside;
 	}
 }
 
