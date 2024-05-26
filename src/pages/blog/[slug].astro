@@ -40,6 +40,7 @@ const { Content } = await entry.render();
 	/>
 
 	<meta slot="head" property="og:title" content={generateTitle(entry.data.title)} />
+	<meta slot="head" property="og:type" content="article" />
 	<meta slot="head" property="og:description" content={entry.data.subtitle} />
 	<meta slot="head" property="og:url" content={buildBlogUrl(Astro.site?.href, entry.slug)} />
 	<meta slot="head" property="og:image" content={entry.data.cover?.src} />
