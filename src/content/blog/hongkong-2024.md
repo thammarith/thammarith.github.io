@@ -260,7 +260,7 @@ tags: []
 
 ถ้ายกตัวอย่างให้ง่ายที่สุดก็คือนั่งรถสาย Tsuen Wan มาจากสถานี Tsuen Wan ไปยัง Central (วิ่งลงใต้) แล้วต้องการเปลี่ยนไปสาย Kwun Tong ซึ่งตีคู่กันยาว 3 สถานี
 
-1. ถ้าจะเปลี่ยนไปปลายทาง Tiu Keng Leng ให้ลงที่ Prince Edwards
+1. ถ้าจะเปลี่ยนไปปลายทาง Tiu Keng Leng ให้ลงที่ Prince Edward
 2. ถ้าจะเปลี่ยนไปปลายทาง Whampoa ให้ลงที่ Mong Kok
 3. ถ้าจะย้อนกลับไป Tsuen Wan (ของสาย Tsuen Wan ที่นั่งอยู่) ให้ลงที่ Yau Ma Tei
 
