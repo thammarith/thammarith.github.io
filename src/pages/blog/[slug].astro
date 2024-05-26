@@ -43,18 +43,18 @@ const { Content } = await entry.render();
 	<meta slot="head" property="og:type" content="article" />
 	<meta slot="head" property="og:description" content={entry.data.subtitle} />
 	<meta slot="head" property="og:url" content={buildBlogUrl(Astro.site?.href, entry.slug)} />
-	<meta slot="head" property="og:image" content={entry.data.cover?.src} />
+	<meta slot="head" property="og:image" content={entry.data.cover?.image.src} />
 
 	<BaseResponsive>
 		<article id="blogPost">
 			<header class="mt-8">
 				<h1 class="text-5xl font-semibold">{entry.data.title}</h1>
 				{
-					entry.data.cover && (
+					entry.data.cover?.image && (
 						<div class="flex items-center justify-center max-w-[100vw] w-[100vw] left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] relative mt-12">
 							<Image
-								src={entry.data.cover}
-								alt={entry.data.title}
+								src={entry.data.cover.image}
+								alt={entry.data.cover.alt}
 								class="max-w-[96ch] w-screen lg:rounded-lg"
 							/>
 						</div>

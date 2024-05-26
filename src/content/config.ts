@@ -14,7 +14,7 @@ const articleCollection = defineCollection({
 
 const blogCollection = defineCollection({
 	type: 'content',
-	schema: ({ image }) =>
+	schema: ({ image: img }) =>
 		z.object({
 			isDraft: z.boolean().optional().default(false),
 			kicker: z.string().optional(),
@@ -22,9 +22,12 @@ const blogCollection = defineCollection({
 			subtitle: z.string().optional(),
 			excerpt: z.string().optional(),
 			tags: z.array(z.string()),
-			cover: image()
-				.refine((img) => img.width >= 1080, {
-					message: 'Cover image must be at least 1080 pixels wide!',
+			cover: z
+				.object({
+					image: img().refine((img) => img.width >= 1080, {
+						message: 'Cover image must be at least 1080 pixels wide!',
+					}),
+					alt: z.string(),
 				})
 				.optional(),
 			pubDate: z.date(),
