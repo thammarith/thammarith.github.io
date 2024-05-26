@@ -8,7 +8,7 @@
 	}
 
 	& h3 {
-		@apply mt-8 mb-4 text-2xl font-medium;
+		@apply mt-8 -mb-2 text-2xl font-medium;
 	}
 }
 
