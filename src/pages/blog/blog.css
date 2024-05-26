@@ -1,23 +1,43 @@
-#blogPost h1,
-#blogPost h2,
-#blogPost h3,
-#blogPost h4,
-#blogPost h5,
-#blogPost h6 {
+#blogPost :is(h1, h2, h3, h4, h5, h6) {
 	@apply font-['Anuphan'];
+}
+
+#blogContent {
+	& h2 {
+		@apply mt-10 mb-6 text-4xl font-medium;
+	}
+
+	& h3 {
+		@apply mt-8 mb-4 text-2xl font-medium;
+	}
 }
 
 #blogContent {
 	@apply my-12;
 }
 
-#blogContent h2 {
-	@apply mt-10 mb-6 text-4xl font-medium;
-}
+#blogContent {
+	& p {
+		@apply mt-6;
+		@apply font-[350];
+	}
 
-#blogContent p {
-	@apply mt-6;
-	@apply font-[350];
+	& strong {
+		@apply font-medium;
+	}
+
+	& :is(ol, ul) {
+		@apply font-light;
+		@apply mt-6;
+
+		& > li {
+			@apply ml-5;
+		}
+	}
+
+	& ol > li {
+		@apply list-decimal;
+	}
 }
 
 #blogContent a {
@@ -34,6 +54,6 @@
 }
 
 /* Adds margin to start to offsets the italic */
-#blogContent em>[href^='http']:not([href*='thammarith.dev'])::after {
+#blogContent em > [href^='http']:not([href*='thammarith.dev'])::after {
 	@apply ms-1;
 }

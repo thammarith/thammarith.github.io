@@ -28,24 +28,28 @@ const { Content } = await entry.render();
 		rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&family=Noto+Serif+Thai:wght@100..900&display=swap"
 	/>
-	<link
+	<!-- <link
 		slot="head"
 		rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
-	/>
-	<!-- <link
-		slot="head"
-		href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@400&display=swap"
-		rel="stylesheet"
 	/> -->
+	<link
+		slot="head"
+		href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@300;500&display=swap"
+		rel="stylesheet"
+	/>
 	<BaseResponsive>
 		<article id="blogPost">
 			<header class="mt-8">
 				<h1 class="text-5xl font-semibold">{entry.data.title}</h1>
 			</header>
-			<section id="blogContent" class="mt-6 font-['Noto_Serif_Thai'] font-normal text-lg">
+			<section id="blogContent" class="mt-6 font-['Noto_Sans_Thai_Looped'] font-normal text-lg">
 				<Content />
 			</section>
 		</article>
+		<!-- TODO: Add correction notice -->
+		<!-- <section class="p-4 rounded-md bg-slate-200 text-neutral-700">
+			If you notice an error, please let me know on <a href="https://github.com/thammarith/thammarith.github.io/issues/new" target="_blank">GitHub</a>.
+		</section> -->
 	</BaseResponsive>
 </BaseLayout>
