@@ -11,7 +11,10 @@ const ThaiWebRing = () => (
 const Footer: Component = () => (
 	<footer class="px-8 py-16 sm:px-16 bg-slate-900 flex flex-col flex-grow-0 items-center justify-center">
 		<div class="relative w-full max-w-[72ch] text-white font-['Figtree']">
-			<a href="https://thammarith.dev" class="inline-block px-4 py-2 -mx-4 -my-2 hover:bg-slate-700 hover:rounded transition">
+			<a
+				href="https://thammarith.dev"
+				class="inline-block px-4 py-2 -mx-4 -my-2 hover:bg-slate-700 hover:rounded transition"
+			>
 				<h2 class="text-slate-100 font-['Poppins'] font-semibold text-3xl">thammarith.dev</h2>
 			</a>
 
@@ -26,7 +29,7 @@ const Footer: Component = () => (
 					Content licensed under the&nbsp;
 					<Link href="https://creativecommons.org/licenses/by-sa/4.0">
 						Creative Commons Attribution-ShareAlike 4.0 International Licence
-					</Link>
+					</Link> unless stated otherwise. <Link href="/licence">Royalties & how to reuse</Link>
 				</p>
 				<p class="mt-4">
 					<Link href="https://github.com/thammarith/thammarith.github.io">
