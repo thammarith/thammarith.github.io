@@ -1,8 +1,9 @@
 {
-	"name": "temp",
+	"name": "thammarith.github.io",
 	"type": "module",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"license": "GPL-3.0",
+	"packageManager": "pnpm@8.8.0",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
