@@ -1,5 +1,7 @@
 # Licensing
 
+> It's not finished yet. Are you in a rush? :troll-face:
+
 Thanks for using my creative works.
 
 Usually, the works are licensed under the [Creative Commons Attribution-ShareAlike 4.0 International Licence](https://creativecommons.org/licenses/by-sa/4.0/), so you are free to use them as long as you give a clear attribution and license the derived work under CC BY-SA 4.0 or [a compatible licence](https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses/).
