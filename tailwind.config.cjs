@@ -5,6 +5,10 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			colors: {
+				// https://twitter.com/aleksliving/status/1794948623257440377
+				space-orange: '#ff4f00',
+			},
 			fontFamily: {
 				title: ['Poppins', ...baseSansSerif],
 				heading: ['Figtree', 'Anuphan', ...baseSansSerif],
