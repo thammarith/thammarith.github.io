@@ -15,7 +15,7 @@ const Footer: Component = () => (
 				href="/"
 				class="inline-block px-4 py-2 -mx-4 -my-2 hover:bg-space-orange rounded transition"
 			>
-				<h2 class="text-slate-100 font-title font-semibold text-3xl">thammarith.dev</h2>
+				<h2 class="text-slate-100 hover:text-white font-title font-semibold text-3xl">thammarith.dev</h2>
 			</a>
 
 			<div id="licence" class="font-text mt-12 text-slate-400">
