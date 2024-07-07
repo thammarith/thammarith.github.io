@@ -28,6 +28,15 @@ const { title, description = 'Thammarith’s personal website and blog', isWithH
 			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,600&display=swap"
 		/>
 		<slot name="head" />
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-MDV4BCTM9F"></script>
+		<script>
+			// @ts-nocheck
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-MDV4BCTM9F');
+			// @ts-check
+		</script>
 		<script is:inline type="text/javascript">
 			(function(c,l,a,r,i,t,y){
 				c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
