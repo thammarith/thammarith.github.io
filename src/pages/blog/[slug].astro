@@ -49,7 +49,14 @@ const { Content } = await entry.render();
 	<BaseResponsive>
 		<article id="blogPost">
 			<header>
-				<h1 class="text-5xl font-semibold">{entry.data.title}</h1>
+				<h1 class="text-5xl font-semibold -ml-0.5">{entry.data.title}</h1>
+				<div class="mt-2 font-heading">
+					<time datetime={entry.data.pubDate.toISOString().split('T').at(0)}>
+						{new Intl.DateTimeFormat(entry.data.lang, { dateStyle: 'medium' }).format(new Date(entry.data.pubDate))}
+					</time>
+					{' · '}
+					{entry.data.lang.includes('th') ? 'ธรรมฤทธิ์ ลิขิตธีรเมธ' : 'Thammarith Likittheerameth'}
+				</div>
 				{
 					entry.data.cover?.image && (
 						<div class="flex items-center justify-center max-w-[100vw] w-[100vw] left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] relative mt-12">

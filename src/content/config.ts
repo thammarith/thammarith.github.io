@@ -31,6 +31,7 @@ const blogCollection = defineCollection({
 				})
 				.optional(),
 			pubDate: z.date(),
+			lang: z.string().optional().default('en-GB'),
 		}),
 });
 

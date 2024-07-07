@@ -7,6 +7,7 @@ cover:
     image: './images/hongkong-2024/11-hongkong-junk-boat.jpeg'
     alt: เรือสำเภาในอ่าววิกตอเรีย
 pubDate: 2024-05-22
+lang: 'th-TH'
 tags: []
 ---
 
