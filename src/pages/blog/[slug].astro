@@ -4,11 +4,12 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import BaseResponsive from '@layouts/BaseResponsive.astro';
 
-import './_blog.css';
 import { EntryType } from 'src/constants/entryTypes';
 import { Image } from 'astro:assets';
 import { buildBlogUrl } from 'src/utils/urlUtils';
 import { generateTitle } from 'src/utils/titleUtils';
+
+import './_blog.css';
 
 export async function getStaticPaths() {
 	const blogEntries = await getCollection(EntryType.BLOG);

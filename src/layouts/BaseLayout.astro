@@ -1,8 +1,11 @@
 ---
+import Header from '@components/Header.tsx';
 import Footer from '@components/Footer.tsx';
 import { generateTitle } from 'src/utils/titleUtils';
 
-const { title, description = 'Thammarith’s personal website and blog' } = Astro.props;
+import './BaseLayout.css';
+
+const { title, description = 'Thammarith’s personal website and blog', isWithHeader = true } = Astro.props;
 ---
 
 <html lang="en">
@@ -25,7 +28,7 @@ const { title, description = 'Thammarith’s personal website and blog' } = Astr
 			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,600&display=swap"
 		/>
 		<slot name="head" />
-		<script type="text/javascript">
+		<script is:inline type="text/javascript">
 			(function(c,l,a,r,i,t,y){
 				c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
 				t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -34,6 +37,7 @@ const { title, description = 'Thammarith’s personal website and blog' } = Astr
 		</script>
 	</head>
 	<body>
+		{isWithHeader && <Header />}
 		<slot />
 		<Footer />
 	</body>
