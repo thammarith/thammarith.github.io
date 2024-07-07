@@ -7,7 +7,7 @@ module.exports = {
 		extend: {
 			colors: {
 				// https://twitter.com/aleksliving/status/1794948623257440377
-				space-orange: '#ff4f00',
+				'space-orange': '#ff4f00',
 			},
 			fontFamily: {
 				title: ['Poppins', ...baseSansSerif],
