@@ -29,7 +29,7 @@ const Footer: Component = () => (
 					Content licensed under the&nbsp;
 					<Link href="https://creativecommons.org/licenses/by-sa/4.0">
 						Creative Commons Attribution-ShareAlike 4.0 International Licence
-					</Link> unless stated otherwise. <Link href="/licence">Royalties & how to reuse</Link>
+					</Link> unless stated otherwise. Reposting is strictly prohibited. <Link href="/licence">Royalties & how to reuse</Link>
 				</p>
 				<p class="mt-4">
 					<Link href="https://github.com/thammarith/thammarith.github.io">

@@ -18,6 +18,8 @@ Email me at ...
 
 ## Royalties
 
+The royalties are per platform. If my works are to be used in multiple places, please license for each place. Contact me for more information & discounts.
+
 ### Websites & prints
 
 Websites do not include social media platforms. If you use my content in a social media platform, please see the *Social media* section below.
@@ -55,3 +57,13 @@ Please contact me. If it is a cause I support, I will allow free usage under con
 ### Others
 
 Please contact me for arrangement.
+
+## Examples
+
+### Case A: a single platform
+
+Mr A wants to use two pictures of mine on his website which has 500,000 visits per year. The royalty would be $400 (2x$200) in total.
+
+### Case B: Multiple platform
+
+Ms B wants to use a picture from me on her website and shares on her Twitter (X) and Instagram which has 1,000,000 visits/yr, 100, and 500,000 followers respectively. She has to pay $2,000 (website) + $200 (Twitter) + $,2000 (Instagram) = $4,200 in total.
