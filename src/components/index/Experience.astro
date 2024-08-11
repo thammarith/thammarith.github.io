@@ -7,9 +7,9 @@ import { ExperienceCard } from './ExperienceCard';
 const workContent = await getCollection('work');
 ---
 
-<div class="w-full my-12 max-w-[72ch] font-['Figtree']">
+<div class="w-full my-12 max-w-[72ch] font-heading">
 	<h2 class="text-2xl font-semibold mb-4">Experience</h2>
 	<div class="flex flex-wrap gap-4">
-		{workContent.map(w => <ExperienceCard slug={w.data.slug} positions={w.data.positions} />)}
+		{workContent.map(w => <ExperienceCard client:visible slug={w.data.slug} positions={w.data.positions} />)}
 	</div>
 </div>
