@@ -1,3 +1,9 @@
+@import 'tailwindcss/base';
+
 * {
 	font-display: swap;
+}
+
+.modal--open {
+	@apply overflow-hidden;
 }

@@ -17,9 +17,6 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.13.3(@types/node@22.2.0))(tailwindcss@3.4.9)
-      '@fortawesome/fontawesome-free':
-        specifier: ^6.6.0
-        version: 6.6.0
       astro:
         specifier: ^4.13.3
         version: 4.13.3(@types/node@22.2.0)
@@ -333,10 +330,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
-
-  '@fortawesome/fontawesome-free@6.6.0':
-    resolution: {integrity: sha512-60G28ke/sXdtS9KZCpZSHHkCbdsOGEhIUGlwq6yhY74UpTiToIh8np7A8yphhM4BWsvNFtIvLpi4co+h9Mr9Ow==}
-    engines: {node: '>=6'}
 
   '@img/sharp-darwin-arm64@0.33.4':
     resolution: {integrity: sha512-p0suNqXufJs9t3RqLBO6vvrgr5OhgbWp76s5gTRvdmxmuv9E1rcaqGUsl3l4mKVmXPkTkTErXediAui4x+8PSA==}
@@ -2278,8 +2271,6 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
-
-  '@fortawesome/fontawesome-free@6.6.0': {}
 
   '@img/sharp-darwin-arm64@0.33.4':
     optionalDependencies:
