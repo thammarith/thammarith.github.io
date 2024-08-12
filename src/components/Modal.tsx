@@ -29,7 +29,7 @@ export const Modal: FlowComponent<ModalProps> = (props) => {
 			<dialog
 				class="fixed p-12 backdrop:backdrop-blur-sm rounded-md"
 				classList={{
-					[props.classList]: !!props.classList,
+					[props.classList ?? '']: !!props.classList,
 				}}
 				ref={ref}
 			>

@@ -73,7 +73,7 @@ export const ExperienceCard: Component<Props> = (props) => {
 						<img src={getLogo(props.slug).src} alt={props.slug} class="max-h-8" />
 					</div>
 					<div>
-						<h4 class="font-semibold text-lg">{getPeakPosition(props.positions)}</h4>
+						<h3 class="font-semibold text-lg">{getPeakPosition(props.positions)}</h3>
 						<p class="text-sm">{getServiceYear(props.positions)}</p>
 					</div>
 				</div>
