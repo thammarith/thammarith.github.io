@@ -1,5 +1,5 @@
 ---
-slug: 'tedxmahidolu'
+id: 'tedxmahidolu'
 name: 'TEDxMahidolU'
 location: 'Bangkok, Thailand'
 positions:

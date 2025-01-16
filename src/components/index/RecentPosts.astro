@@ -14,7 +14,7 @@ const blogContent = await getBlogEntries(true);
 	<div>
 		{
 			blogContent.map((b) => (
-				<a class="block mt-4 hover:text-blue-700" href={`/blog/${b.slug}`}>
+				<a class="block mt-4 hover:text-blue-700" href={`/blog/${b.id}`}>
 					<h3 class="text-lg font-semibold">
 						<i class="fa-kit fa-blog-carbon fa-blog me-1" />
 						{b.data.title}
@@ -51,6 +51,6 @@ const blogContent = await getBlogEntries(true);
 				))
 				?.filter((_: any, i: number) => i < 3)
 		}
-		<!-- {workContent.map(w => <ExperienceCard slug={w.data.slug} positions={w.data.positions} />)} -->
+		<!-- {workContent.map(w => <ExperienceCard id={w.data.id} positions={w.data.positions} />)} -->
 	</div>
 </div>

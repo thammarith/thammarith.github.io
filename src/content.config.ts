@@ -3,19 +3,20 @@
 import { defineCollection, z } from 'astro:content';
 import { rssSchema } from '@astrojs/rss';
 import { Locale } from 'src/constants/locale';
+import { glob } from 'astro/loaders';
 
-const articleCollection = defineCollection({
-	type: 'content',
-	schema: z.object({
-		title: z.string(),
-		tags: z.array(z.string()),
-		image: z.string().optional(),
-	}),
-});
+// const articleCollection = defineCollection({
+// 	type: 'content',
+// 	schema: z.object({
+// 		title: z.string(),
+// 		tags: z.array(z.string()),
+// 		image: z.string().optional(),
+// 	}),
+// });
 
 const blogCollection = defineCollection({
-	type: 'content',
-	schema: ({ image: img }) =>
+	loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/blog" }),
+	schema: ({ image }) =>
 		z.object({
 			isDraft: z.boolean().optional().default(false),
 			kicker: z.string().optional(),
@@ -25,9 +26,7 @@ const blogCollection = defineCollection({
 			tags: z.array(z.string()),
 			cover: z
 				.object({
-					image: img().refine((img) => img.width >= 1080, {
-						message: 'Cover image must be at least 1080 pixels wide!',
-					}),
+					image: image(),
 					alt: z.string(),
 				})
 				.optional(),
@@ -37,9 +36,9 @@ const blogCollection = defineCollection({
 });
 
 const workCollection = defineCollection({
-	type: 'data',
+	loader: glob({ pattern: '**/[^_]*.yml', base: "./src/content/work" }),
 	schema: z.object({
-		slug: z.string(),
+		id: z.string(),
 		name: z.string(),
 		description: z.string().optional(),
 		location: z.string(),
@@ -57,7 +56,7 @@ const workCollection = defineCollection({
 });
 
 export const collections = {
-	article: articleCollection,
+	// article: articleCollection,
 	blog: blogCollection,
 	work: workCollection,
 };

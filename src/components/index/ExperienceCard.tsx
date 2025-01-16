@@ -15,13 +15,13 @@ type Position = {
 
 type Props = {
 	positions: Position[];
-	slug: string;
+	id: string;
 };
 
 const getPeakPosition = (positions: Props['positions']) => positions.at(0)?.title ?? 'Software Engineer';
 
-const getLogo = (slug: Props['slug']): ImageMetadata => {
-	const is = (name: string) => slug === name;
+const getLogo = (id: Props['id']): ImageMetadata => {
+	const is = (name: string) => id === name;
 	if (is('agoda')) return AgodaLogo;
 	if (is('viabus')) return ViabusDark;
 	if (is('tedxmahidolu')) return TedXMahidolU;
@@ -38,7 +38,7 @@ const getServiceYear = (positions: Props['positions']) => {
 
 export const ExperienceDetail: Component<ModalProps & Props> = (props) => (
 	<Modal onClose={props.onClose} classList="min-w-[48dvw]">
-		<img src={getLogo(props.slug).src} alt={props.slug} class="max-h-8" />
+		<img src={getLogo(props.id).src} alt={props.id} class="max-h-8" />
 		<div class="mt-4">
 			{props.positions
 				.sort((a, b) => b.startDate.valueOf() - a.startDate.valueOf())
@@ -70,7 +70,7 @@ export const ExperienceCard: Component<Props> = (props) => {
 			<div class="flex-auto md:flex-1 shadow-md p-8 rounded hover:cursor-pointer" onClick={openDialogue}>
 				<div class="flex gap-4 md:block">
 					<div class="w-20 h-12 flex items-center justify-start">
-						<img src={getLogo(props.slug).src} alt={props.slug} class="max-h-8" />
+						<img src={getLogo(props.id).src} alt={props.id} class="max-h-8" />
 					</div>
 					<div>
 						<h3 class="font-semibold text-lg">{getPeakPosition(props.positions)}</h3>

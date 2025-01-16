@@ -10,7 +10,7 @@ export const GET = async (context: any) => {
 		pubDate: post.data.pubDate,
 		description: post.data.excerpt,
 		// customData: post.data.customData,
-		link: `/blog/${post.slug}/`,
+		link: `/blog/${post.id}/`,
 	}));
 
 	return rss({
