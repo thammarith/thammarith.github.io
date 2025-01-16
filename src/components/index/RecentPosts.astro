@@ -16,7 +16,7 @@ const blogContent = await getBlogEntries(true);
 			blogContent.map((b) => (
 				<a class="block mt-4 hover:text-blue-700" href={`/blog/${b.slug}`}>
 					<h3 class="text-lg font-semibold">
-						<i class="fa-solid fa-blog me-2" />
+						<i class="fa-kit fa-blog-carbon fa-blog me-1" />
 						{b.data.title}
 					</h3>
 					<p>
@@ -37,7 +37,7 @@ const blogContent = await getBlogEntries(true);
 				?.item?.map((i: any) => (
 					<a class="block mt-4 hover:text-blue-700" href={i.link.at(0)}>
 						<h3 class="text-lg font-semibold">
-							<i class="fa-brands fa-medium me-2" />
+							<i class="fa-brands fa-medium me-1" />
 							{i.title.at(0)}
 						</h3>
 						<p>

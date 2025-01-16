@@ -2,6 +2,7 @@
 // https://docs.astro.build/en/guides/content-collections/#defining-multiple-collections
 import { defineCollection, z } from 'astro:content';
 import { rssSchema } from '@astrojs/rss';
+import { Locale } from 'src/constants/locale';
 
 const articleCollection = defineCollection({
 	type: 'content',
@@ -31,7 +32,7 @@ const blogCollection = defineCollection({
 				})
 				.optional(),
 			pubDate: z.date(),
-			lang: z.string().optional().default('en-GB'),
+			lang: z.nativeEnum(Locale).optional().default(Locale.EN),
 		}),
 });
 

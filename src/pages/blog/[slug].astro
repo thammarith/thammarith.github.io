@@ -10,6 +10,7 @@ import { buildBlogUrl } from 'src/utils/urlUtils';
 import { generateTitle } from 'src/utils/titleUtils';
 
 import './_blog.css';
+import { THAMMARITH_LIKITTHEERAMETH } from 'src/content/translations/names';
 
 export async function getStaticPaths() {
 	const blogEntries = await getCollection(EntryType.BLOG);
@@ -23,7 +24,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.subtitle}>
+<BaseLayout title={entry.data.title} description={entry.data.subtitle} lang={entry.data.lang}>
 	<link
 		slot="head"
 		rel="stylesheet"
@@ -55,7 +56,7 @@ const { Content } = await entry.render();
 						{new Intl.DateTimeFormat(entry.data.lang, { dateStyle: 'medium' }).format(new Date(entry.data.pubDate))}
 					</time>
 					{' · '}
-					{entry.data.lang.includes('th') ? 'ธรรมฤทธิ์ ลิขิตธีรเมธ' : 'Thammarith Likittheerameth'}
+					{THAMMARITH_LIKITTHEERAMETH[entry.data.lang]}
 				</div>
 				{
 					entry.data.cover?.image && (

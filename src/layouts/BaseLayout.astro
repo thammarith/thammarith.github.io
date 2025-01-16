@@ -4,11 +4,12 @@ import Footer from '@components/Footer.tsx';
 import { generateTitle } from 'src/utils/titleUtils';
 
 import './BaseLayout.css';
+import { Locale } from 'src/constants/locale';
 
-const { title, description = 'Thammarith’s personal website and blog', isWithHeader = true } = Astro.props;
+const { title, description = 'Thammarith’s personal website and blog', isWithHeader = true, lang = Locale.EN } = Astro.props;
 ---
 
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -17,6 +18,7 @@ const { title, description = 'Thammarith’s personal website and blog', isWithH
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{generateTitle(title)}</title>
+		<link rel="preconnect" href="https://kit.fontawesome.com" crossorigin="anonymous"/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
