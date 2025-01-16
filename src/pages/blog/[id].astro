@@ -9,8 +9,8 @@ import { Image } from 'astro:assets';
 import { buildBlogUrl } from 'src/utils/urlUtils';
 import { generateTitle } from 'src/utils/titleUtils';
 
-import './_blog.css';
 import { THAMMARITH_LIKITTHEERAMETH } from 'src/translations/names';
+import './_blog.css';
 
 export async function getStaticPaths() {
 	const blogEntries = await getCollection(EntryType.BLOG);
