@@ -1,5 +1,4 @@
 ---
-import { ClientRouter } from 'astro:transitions';
 import Header from '@components/Header.tsx';
 import Footer from '@components/Footer.tsx';
 import { generateTitle } from 'src/utils/titleUtils';
@@ -60,7 +59,6 @@ const { title, description = 'Thammarith’s personal website and blog', isWithH
 			})(window, document, 'clarity', 'script', 'mtsqb0v0nq');
 		</script>
 		<script async is:inline src="https://kit.fontawesome.com/2125d9bfff.js" crossorigin="anonymous"></script>
-		<ClientRouter />
 	</head>
 	<body>
 		{isWithHeader && <Header />}
