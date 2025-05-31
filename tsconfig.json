@@ -1,5 +1,7 @@
 {
 	"extends": "astro/tsconfigs/strict",
+	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": ["dist"],
 	"compilerOptions": {
 		"baseUrl": ".",
 		"jsx": "preserve",
@@ -12,6 +14,6 @@
 			"@styles/*": ["src/styles/*"],
 			"@vendors/*": ["src/vendors/*"]
 		},
-		"verbatimModuleSyntax": true
+		"verbatimModuleSyntax": true,
 	}
 }
