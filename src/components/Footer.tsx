@@ -9,7 +9,7 @@ const ThaiWebRing = () => (
 );
 
 const Footer: Component = () => (
-	<footer class="px-8 py-16 sm:px-16 bg-slate-900 flex flex-col flex-grow-0 items-center justify-center">
+	<footer class="px-8 py-16 sm:px-16 bg-slate-900 flex flex-col grow-0 items-center justify-center">
 		<div class="relative w-full max-w-[72ch] text-white font-heading">
 			<a
 				href="/"

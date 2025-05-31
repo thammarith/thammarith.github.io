@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@theme {
+	/* Colours */
+	/* https://twitter.com/aleksliving/status/1794948623257440377 */
+	--color-space-orange: #ff4f00;
+	/* Fonts */
+	--font-title: Poppins, "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-heading: "Figtree", "Anuphan", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
