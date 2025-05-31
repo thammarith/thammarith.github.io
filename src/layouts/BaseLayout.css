@@ -1,4 +1,4 @@
-@import 'tailwindcss/base';
+@import '../styles/global.css';
 
 * {
 	font-display: swap;
