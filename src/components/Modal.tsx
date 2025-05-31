@@ -27,7 +27,9 @@ export const Modal: FlowComponent<ModalProps> = (props) => {
 	return (
 		<Portal>
 			<dialog
-				class="fixed p-12 backdrop:backdrop-blur-sm rounded-md"
+				// @ts-expect-error: experimental feature
+				closedBy="any"
+				class="fixed p-12 backdrop:backdrop-blur-sm rounded-md top-1/2 left-1/2 -translate-1/2"
 				classList={{
 					[props.classList ?? '']: !!props.classList,
 				}}
