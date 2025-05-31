@@ -62,7 +62,12 @@ const { Content } = await render(entry);
 					entry.data.cover?.image && (
 						<div class="flex items-center justify-center max-w-screen w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] relative mt-12">
 							<Image
-								src={entry.data.cover.image}
+								src={{
+									src: entry.data.cover.image.src,
+									width: entry.data.cover.image.width,
+									height: entry.data.cover.image.height,
+									format: entry.data.cover.image.format,
+								}}
 								alt={entry.data.cover.alt}
 								class="max-w-[96ch] w-screen lg:rounded-lg"
 							/>
