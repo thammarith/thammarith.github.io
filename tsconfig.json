@@ -9,6 +9,7 @@
 			"@components/*": ["src/components/*"],
 			"@layouts/*": ["src/layouts/*"],
 			"@libs/*": ["src/libs/*"],
+			"@styles/*": ["src/styles/*"],
 			"@vendors/*": ["src/vendors/*"]
 		},
 		"verbatimModuleSyntax": true

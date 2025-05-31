@@ -5,6 +5,7 @@
 	/* https://twitter.com/aleksliving/status/1794948623257440377 */
 	--color-space-orange: #ff4f00;
 	/* Fonts */
-	--font-title: Poppins, "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	--font-heading: "Figtree", "Anuphan", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--base-sans-serif: "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-title: Poppins, var(--base-sans-serif);
+	--font-heading: "Figtree", "Anuphan", var(--base-sans-serif);
 }
