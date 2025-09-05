@@ -11,16 +11,33 @@ import { generateTitle } from 'src/utils/titleUtils';
 
 import './_blog.css';
 import { THAMMARITH_LIKITTHEERAMETH } from 'src/translations/names';
+import BlogNavigationLink from '@components/BlogNavigationLink';
 
 export async function getStaticPaths() {
-	const blogEntries = await getCollection(EntryType.BLOG);
-	return blogEntries.map((entry) => ({
-		params: { id: entry.id },
-		props: { entry },
-	}));
+	const blogEntries = await getCollection(EntryType.BLOG, ({ data }) => {
+		return data.isDraft !== true;
+	});
+
+	const sortedEntries = blogEntries.sort((a, b) =>
+		new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+	);
+
+	return sortedEntries.map((entry, index) => {
+		const previousEntry = index > 0 ? sortedEntries[index - 1] : null;
+		const nextEntry = index < sortedEntries.length - 1 ? sortedEntries[index + 1] : null;
+
+		return {
+			params: { id: entry.id },
+			props: {
+				entry,
+				previousEntry,
+				nextEntry
+			},
+		};
+	});
 }
 
-const { entry } = Astro.props;
+const { entry, previousEntry, nextEntry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
@@ -79,6 +96,35 @@ const { Content } = await render(entry);
 				<Content />
 			</section>
 		</article>
+
+		{(previousEntry || nextEntry) && (
+			<nav id="blogNavigation" class="mt-12 pt-8">
+				<div class="flex justify-between items-start gap-8">
+					{previousEntry ? (
+						<BlogNavigationLink
+							entry={previousEntry}
+							direction="previous"
+							siteUrl={Astro.site?.href}
+							client:load
+						/>
+					) : (
+						<div class="flex-1"></div>
+					)}
+
+					{nextEntry ? (
+						<BlogNavigationLink
+							entry={nextEntry}
+							direction="next"
+							siteUrl={Astro.site?.href}
+							client:load
+						/>
+					) : (
+						<div class="flex-1"></div>
+					)}
+				</div>
+			</nav>
+		)}
+
 		<!-- TODO: Add correction notice -->
 		<!-- <section class="p-4 rounded-md bg-slate-200 text-neutral-700">
 			If you notice an error, please let me know on <a href="https://github.com/thammarith/thammarith.github.io/issues/new" target="_blank">GitHub</a>.

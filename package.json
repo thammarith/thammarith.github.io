@@ -3,7 +3,7 @@
 	"type": "module",
 	"version": "1.0.0",
 	"license": "GPL-3.0",
-	"packageManager": "pnpm@10.11.0",
+	"packageManager": "pnpm@10.15.1",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
@@ -14,16 +14,17 @@
 	},
 	"dependencies": {
 		"@astrojs/react": "^4.3.0",
-		"@astrojs/rss": "^4.0.11",
+		"@astrojs/rss": "^4.0.12",
 		"@astrojs/solid-js": "^5.1.0",
-		"@tailwindcss/vite": "^4.1.8",
-		"astro": "^5.8.1",
-		"solid-js": "^1.9.4",
-		"tailwindcss": "^4.1.8"
+		"@tailwindcss/vite": "^4.1.13",
+		"astro": "^5.13.5",
+		"lucide-solid": "^0.542.0",
+		"solid-js": "^1.9.9",
+		"tailwindcss": "^4.1.13"
 	},
 	"devDependencies": {
 		"@types/xml2js": "^0.4.14",
-		"prettier": "^3.4.2",
+		"prettier": "^3.6.2",
 		"prettier-plugin-astro": "^0.14.1",
 		"sharp": "^0.33.5",
 		"unist-util-visit": "^5.0.0",

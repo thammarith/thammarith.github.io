@@ -7,7 +7,14 @@ import '@styles/global.css';
 import './BaseLayout.css';
 import { Locale } from 'src/constants/locale';
 
-const { title, description = 'Thammarith’s personal website and blog', isWithHeader = true, lang = Locale.EN } = Astro.props;
+interface Props {
+    title: string;
+    description?: string;
+    isWithHeader?: boolean;
+    lang?: string;
+}
+
+const { title, description = "Thammarith's personal website and blog", isWithHeader = true, lang = Locale.EN } = Astro.props;
 ---
 
 <html lang={lang}>
@@ -41,7 +48,7 @@ const { title, description = 'Thammarith’s personal website and blog', isWithH
 			// @ts-nocheck
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
-				ataLayer.push(arguments);
+				dataLayer.push(arguments);
 			}
 			gtag('js', new Date());
 			gtag('config', 'G-MDV4BCTM9F');
